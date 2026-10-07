@@ -1,6 +1,10 @@
 // Assignment 1: Blacksmith — The Tiny Forge
 
-// PLAN: Write a short pseudocode plan for making a sword here.
+
+// PLAN: 
+//  1.If the current heat is greater than or equal to 30, then subtract 30 from the heat, increase the number of swords by one, and show a message of success.
+//  2. Else, if the current heat is less than 30, then display a message of failure and do not make any changes to the given numbers.
+
 
 // 1. Select the forge, heat, sword count, status, image, and message elements.
 //    Find their IDs in index.html.
