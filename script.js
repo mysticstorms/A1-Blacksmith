@@ -9,7 +9,7 @@ const heatValue = document.getElementById("heat-value")
 const swordCount = document.getElementById("sword-count")
 const forgeStatus = document.getElementById("forge-status")
 const forgeImage = document.getElementById("forge-image")
-const forgeMessage = document.getElementById("action-message")
+const actionMessage = document.getElementById("action-message")
 // 2. Create the two state variables: heat and swords made.
 
 let heat = 20
@@ -36,7 +36,7 @@ function updateForge() {
     const statusText = getForgeStatus(heat);
     forgeStatus.textContent = statusText;
 
-    forge.classList.remove("too-cold", "ready-to-forge", "roaring-fire");
+    forge.classList.remove("is-cold", "is-ready", "roaring-fire");
 
     if (statusText === "Too Cold") {
         forge.classList.add("is-cold");
@@ -51,15 +51,15 @@ function updateForge() {
         forgeImage.src = "assets/forge-roaring.svg"
         forgeImage.alt = "A stone forge with tall bright flames and sparks"
     }
+    updateForge()
 }
-updateForge()
 
 
 // 5. Write resetForge(). Restore the state, message, and display.
 function resetForge() {
     heat = 20;
     swordsMade = 0;
-    forgeMessage.textContent = "Welcome to the forge. Add heat to begin.";
+    actionMessage.textContent = "Welcome to the forge. Add heat to begin.";
     updateForge();
 }
 
