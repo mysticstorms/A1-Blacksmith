@@ -40,7 +40,7 @@ function updateForge() {
     const statusText = getForgeStatus(heat);
     forgeStatus.textContent = statusText;
 
-    forge.classList.remove("is-cold", "is-ready", "roaring-fire");
+    forge.classList.remove("is-cold", "is-ready", "is-roaring");
 
     if (statusText === "Too Cold") {
         forge.classList.add("is-cold");
@@ -51,11 +51,10 @@ function updateForge() {
         forgeImage.src = "assets/forge-ready.svg"
         forgeImage.alt = "A stone forge with a small orange fire"
     } else {
-        forge.classList.add("roaring-fire");
+        forge.classList.add("is-roaring");
         forgeImage.src = "assets/forge-roaring.svg"
         forgeImage.alt = "A stone forge with tall bright flames and sparks"
     }
-    updateForge()
 }
 
 
